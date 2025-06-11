@@ -1,0 +1,104 @@
+/* ************************************ add modal page ****************************** */
+.add-modal {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: black; */
+    display: none;
+    /* Masquée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.add-modal.show {
+    display: flex;
+}
+
+.add-modal-content {
+    /* width: 400px; */
+    /* background: white; */
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+
+    background-color: #fffdf7;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-modal-content .add-modal-close,
+.add-modal-return {
+    /* padding: 0 5px; */
+    /* background-color: rgba(72, 143, 250, 0.767); */
+    /* position: absolute; */
+    /* transform: translate(390px, -20px); */
+    /* border-radius: 3px; */
+    /* font-size: 25px; */
+    /* color: red; */
+    /* cursor: pointer; */
+
+    /* position: absolute; */
+    /* top: 10px; */
+    /* right: 15px; */
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.div-return-close {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add-modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-modal-content input,
+.add-modal-content select,
+.add-modal-content button {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.add-modal-content button {
+    /* background-color: #4885f7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; */
+
+    padding: 7px 50px;
+    background-color: #245c4f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-modal-content button:hover {
+    background-color: #1c69f7;
+}
+
+/* ************************************ add modal page ****************************** */

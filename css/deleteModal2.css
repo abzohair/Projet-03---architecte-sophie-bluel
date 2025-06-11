@@ -1,0 +1,100 @@
+/* ************************************ delete modal page ****************************** */
+.delete-modal {
+    inset: 0;
+    position: fixed;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-modal.show {
+    display: flex;
+}
+
+.delete-modal-content {
+    background-color: #fffdf7;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 600px;
+    height: 85%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: -30px;
+    text-align: center;
+
+}
+
+.delete-modal-content .delete-modal-close {
+    position: absolute;
+    /* top: 1px; */
+    left: 570px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.delete-modal-content .div-gallery {
+    margin: 20px auto;
+    width: 60%;
+    height: 77%;
+    overflow: auto;
+    border-bottom: 1px solid black;
+
+}
+
+.delete-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.delete-modal-content .add-button {
+    padding: 7px 50px;
+    margin-top: 20px;
+    background-color: #245c4f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.delete-modal-content .add-button:hover {
+    background-color: var(--main-color);
+}
+
+.pics-to-delete {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(87px, 1fr));
+    column-gap: 10px;
+    row-gap: 20px;
+
+}
+
+.pics-to-delete .img-container {
+    position: relative;
+}
+
+.pics-to-delete .delete-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    font-size: smaller;
+    text-align: center;
+}
+
+/* ************************************ delete modal page ****************************** */

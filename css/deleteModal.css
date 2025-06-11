@@ -1,0 +1,137 @@
+/* ************************************ delete modal page ****************************** */
+.delete-modal {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: black; */
+    display: none;
+    /* Masquée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-modal.show {
+    display: flex;
+}
+
+.delete-modal-content {
+    /* width: 400px; */
+    /* background: white; */
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+
+    background-color: red;
+    /* background-color: #fffdf7; */
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    height: 60%;
+    max-width: 600px;
+    position: absolute;
+    z-index: 50;
+    top: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-modal-content .delete-modal-close {
+    /* padding: 0 5px; */
+    /* background-color: rgba(72, 143, 250, 0.767); */
+    /* position: absolute; */
+    /* transform: translate(390px, -20px); */
+    /* border-radius: 3px; */
+    /* font-size: 25px; */
+    /* color: red; */
+    /* cursor: pointer; */
+
+    position: relative;
+    /* top: 1px; */
+    left: 535px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.delete-modal-content .div-gallery {
+    background-color: blue;
+    overflow: hidden;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 550px; */
+    width: 100%;
+}
+
+.div-gallery .pics-to-delete img {
+    object-fit: cover;
+    height: 100px;
+}
+
+.delete-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.delete-modal-content button {
+    /* width: 50%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4885f7;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; */
+    /* width: fit-content; */
+    /* align-self: center; */
+    padding: 7px 50px;
+    background-color: #245c4f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-modal-content button:hover {
+    background-color: var(--main-color);
+}
+
+.pics-to-delete {
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.pics-to-delete span {
+    position: relative;
+    font-size: 17px;
+    font-weight: bold;
+    top: 4px;
+    left: 117px;
+    width: 20%;
+    height: 20%;
+    text-align: center;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+/* ************************************ delete modal page ****************************** */

@@ -9,7 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
         rel="stylesheet">
     <meta name="description" content="">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/desktop.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- <link rel="stylesheet" href="/css/deleteModal.css"> -->
+    <link rel="stylesheet" href="/css/deleteModal2.css">
+    <link rel="stylesheet" href="/css/addModal.css">
     <title>sophie duplicate</title>
 </head>
 
@@ -22,9 +26,10 @@
         </div>
         <nav>
             <ul>
-                <li>projets</li>
-                <li>contact</li>
-                <li class="login-btn">login</li>
+                <li id="projects" class="active-menu">projets</li>
+                <li class="active-menu" id="#contact"><a href="#contact">contact</a></li>
+                <li class="login-btn active-menu">login</li>
+                <li class="logout-btn">logout</li>
                 <li><img src="./icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
@@ -53,61 +58,18 @@
 
         <!-- ------------------------------ introduction -------------------------------------------------  -->
         <section id="portfolio">
-            <h2>Mes Projets</h2>
-            <div class="filter">
-                <ul class="filter-buttons" id="filter-buttons">
-                    <li><button data-category="all" class="active">Tous</button></li>
-                    <li><button data-category="Objets">Objets</button></li>
-                    <li><button data-category="Appartements">Appartements</button></li>
-                    <li><button data-category="Hotels & restaurants">Hotels & Restaurants</button></li>
-                </ul>
+
+            <div class="projects-edit">
+                <h2>Mes Projets</h2>
+                <button id="openModal" class=" edit">&#128221; modifier</button>
+            </div>
+
+
+            <div id="filters" class="filters">
 
             </div>
             <div class="gallery">
-                <figure>
-                    <img src="/images/abajour-tahina.png" alt="Abajour Tahina">
-                    <figcaption>Abajour Tahina</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/appartement-paris-v.png" alt="Appartement Paris V">
-                    <figcaption>Appartement Paris V</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-                    <figcaption>Restaurant Sushisen - Londres</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-                    <figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/structures-thermopolis.png" alt="Structures Thermopolis">
-                    <figcaption>Structures Thermopolis</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/appartement-paris-x.png" alt="Appartement Paris X">
-                    <figcaption>Appartement Paris X</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-                    <figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-                    <figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-                    <figcaption>Appartement Paris XVIII</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-                    <figcaption>Bar “Lullaby” - Paris</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-                    <figcaption>Hotel First Arte - New Delhi</figcaption>
-                </figure>
+
             </div>
         </section>
         <section id="contact">
@@ -130,6 +92,49 @@
         </ul>
     </footer>
 
+    <!-- --------------------------------- delete modal page ----------------------------------  -->
+
+    <div class="delete-modal" id="deleteModal">
+        <div class="delete-modal-content">
+            <span class="delete-modal-close">&times;</span>
+            <div class="div-gallery">
+                <h2>Galerie photo</h2>
+                <article class="pics-to-delete">
+
+                </article>
+
+            </div>
+            <button class="add-button">Ajouter une photo</button>
+        </div>
+    </div>
+    <!-- --------------------------------- delete modal page ----------------------------------  -->
+
+    <!-- --------------------------------- add modal page ----------------------------------  -->
+
+    <div class="add-modal" id="addModal">
+        <div class="add-modal-content">
+            <div class="div-return-close">
+                <span class="add-modal-return">&#11013;</span>
+                <span class="add-modal-close">&times;</span>
+            </div>
+            <h2>Ajouter un projet</h2>
+            <form id="upload-form">
+                <input type="file" name="image" required />
+                <input type="text" name="title" placeholder="Titre du projet" required />
+                <select name="category" required>
+                    <option value="">Choisir une catégorie</option>
+                    <option value="Appartements">Appartements</option>
+                    <option value="Objets">Objets</option>
+                    <option value="Extérieurs">Extérieurs</option>
+                </select>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+    <!-- --------------------------------- add modal page ----------------------------------  -->
+
+    <script type="module" src="./js/main.js"></script>
+    <!-- <script type="module" src="./login.js"></script> -->
 </body>
 
 </html>
