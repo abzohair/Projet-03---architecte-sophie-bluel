@@ -9,38 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
         rel="stylesheet">
     <meta name="description" content="">
-    <link rel="stylesheet" href="/css/desktop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/login.css">
-    <!-- <link rel="stylesheet" href="/css/deleteModal.css"> -->
-    <link rel="stylesheet" href="/css/deleteModal2.css">
+    <link rel="stylesheet" href="/css/deleteModal.css">
     <link rel="stylesheet" href="/css/addModal.css">
     <title>sophie duplicate</title>
 </head>
 
 <body>
-    <!-- ------------------------------ header -------------------------------------------------  -->
+    <!-- header -->
     <header>
-        <!-- <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1> -->
         <div class="logo">
             <img src="./icons/Logo.png" alt="">
         </div>
         <nav>
             <ul>
-                <li id="projects" class="active-menu">projets</li>
-                <li class="active-menu" id="#contact"><a href="#contact">contact</a></li>
-                <li class="login-btn active-menu">login</li>
+                <li id="projects">projets</li>
+                <li id="#contact"><a href="#contact">contact</a></li>
+                <li class="login-btn ">login</li>
                 <li class="logout-btn">logout</li>
                 <li><img src="./icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
     </header>
-    <!-- ------------------------------ main -------------------------------------------------  -->
-    <!-- ------------------------------ introduction -------------------------------------------------  -->
+    <!-- main -->
+    <!-- introduction -->
     <main>
-        <section id="introduction" class="introduction">
-            <figure class="profile-img">
-                <img src="./images/sophie-bluel.png" alt="">
-            </figure>
+        <figure id="introduction" class="introduction">
+            <div class="profile-img">
+                <img src="./images/sophie-bluel.png" alt="image sophie bluel">
+            </div>
             <article class="profile-article">
                 <h2 class="subtitle">Designer d'espace</h2>
                 <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
@@ -48,15 +47,15 @@
                     du chantier.</p>
                 <p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
                     couleurs
-                    dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera
+                    dans le respect de l'esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera
                     assuré
                     dans le souci du détail, le respect du planning et du budget.</p>
                 <p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
                     décorateur(trice)</p>
             </article>
-        </section>
+        </figure>
 
-        <!-- ------------------------------ introduction -------------------------------------------------  -->
+        <!-- portfolio -->
         <section id="portfolio">
 
             <div class="projects-edit">
@@ -64,10 +63,10 @@
                 <button id="openModal" class=" edit">&#128221; modifier</button>
             </div>
 
-
             <div id="filters" class="filters">
 
             </div>
+
             <div class="gallery">
 
             </div>
@@ -78,7 +77,7 @@
             <form action="#" method="post">
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name">
-                <label for="email">Email</label>
+                <label for="email">E-mail</label>
                 <input type="email" name="email" id="email">
                 <label for="message">Message</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
@@ -92,49 +91,55 @@
         </ul>
     </footer>
 
-    <!-- --------------------------------- delete modal page ----------------------------------  -->
+    <!-- delete modal page -->
 
     <div class="delete-modal" id="deleteModal">
         <div class="delete-modal-content">
             <span class="delete-modal-close">&times;</span>
             <div class="div-gallery">
                 <h2>Galerie photo</h2>
-                <article class="pics-to-delete">
+                <figure class="pics-to-delete">
 
-                </article>
+                </figure>
 
             </div>
             <button class="add-button">Ajouter une photo</button>
         </div>
     </div>
-    <!-- --------------------------------- delete modal page ----------------------------------  -->
+    <!-- delete modal page -->
 
-    <!-- --------------------------------- add modal page ----------------------------------  -->
+    <!-- add modal page -->
 
     <div class="add-modal" id="addModal">
         <div class="add-modal-content">
             <div class="div-return-close">
-                <span class="add-modal-return">&#11013;</span>
+                <!-- <span class="add-modal-return">&#11013;</span> -->
+                <span class="add-modal-return" style="transform: rotate(180deg);">&#10140;</span>
                 <span class="add-modal-close">&times;</span>
             </div>
-            <h2>Ajouter un projet</h2>
-            <form id="upload-form">
-                <input type="file" name="image" required />
-                <input type="text" name="title" placeholder="Titre du projet" required />
-                <select name="category" required>
-                    <option value="">Choisir une catégorie</option>
-                    <option value="Appartements">Appartements</option>
-                    <option value="Objets">Objets</option>
-                    <option value="Extérieurs">Extérieurs</option>
+            <h2>Ajout photo</h2>
+            <form id="uploadForm">
+                <div id="previewContainer" class="preview-container">
+                    <i class="fa-solid fa-image"></i>
+                    <label for="image" class="input-file">+ Ajout photo</label>
+                    <p>jpg png: 4 mo max</p>
+                    <input type="file" id="image" name="image">
+                </div>
+                <label for="title">Titre</label>
+                <input type="text" id="title" name="title" placeholder="Titre du projet">
+                <label for="category">Catégorie</label>
+                <select id="category" class="category" name="category">
+
                 </select>
-                <button type="submit">Envoyer</button>
+                <hr>
+                <button type="submit">Valider</button>
             </form>
         </div>
     </div>
-    <!-- --------------------------------- add modal page ----------------------------------  -->
+    <!-- add modal page -->
 
     <script type="module" src="./js/main.js"></script>
-    <!-- <script type="module" src="./login.js"></script> -->
+
 </body>
 
 </html>

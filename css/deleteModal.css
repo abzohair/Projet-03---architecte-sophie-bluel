@@ -1,16 +1,10 @@
 /* ************************************ delete modal page ****************************** */
 .delete-modal {
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0, 0, 0, 0.5);
-    /* background-color: black; */
-    display: none;
-    /* Masquée par défaut */
+    inset: 0;
     position: fixed;
-    top: 0;
-    left: 0;
-    /* display: flex; */
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -20,37 +14,22 @@
 }
 
 .delete-modal-content {
-    /* width: 400px; */
-    /* background: white; */
-    /* padding: 20px; */
-    /* border-radius: 10px; */
-
-    background-color: red;
-    /* background-color: #fffdf7; */
-    padding: 30px;
-    border-radius: 10px;
+    background-color: #fffdf7;
+    border-radius: 12px;
     width: 80%;
-    height: 60%;
     max-width: 600px;
-    position: absolute;
-    z-index: 50;
-    top: 100px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 600px;
+    height: 85%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: -30px;
+    text-align: center;
+
 }
 
 .delete-modal-content .delete-modal-close {
-    /* padding: 0 5px; */
-    /* background-color: rgba(72, 143, 250, 0.767); */
-    /* position: absolute; */
-    /* transform: translate(390px, -20px); */
-    /* border-radius: 3px; */
-    /* font-size: 25px; */
-    /* color: red; */
-    /* cursor: pointer; */
-
-    position: relative;
-    /* top: 1px; */
-    left: 535px;
+    position: absolute;
+    left: 570px;
     font-size: 24px;
     font-weight: bold;
     color: #333;
@@ -58,19 +37,12 @@
 }
 
 .delete-modal-content .div-gallery {
-    background-color: blue;
-    overflow: hidden;
-    /* position: relative; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* height: 550px; */
-    width: 100%;
-}
+    margin: 20px auto;
+    width: 60%;
+    height: 77%;
+    overflow: auto;
+    border-bottom: 1px solid black;
 
-.div-gallery .pics-to-delete img {
-    object-fit: cover;
-    height: 100px;
 }
 
 .delete-modal-content h2 {
@@ -80,58 +52,48 @@
 }
 
 
-.delete-modal-content button {
-    /* width: 50%;
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: #4885f7;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease; */
-    /* width: fit-content; */
-    /* align-self: center; */
+.delete-modal-content .add-button {
     padding: 7px 50px;
-    background-color: #245c4f;
+    margin-top: 20px;
+    background-color: #3d9457;
     color: white;
     border: none;
     border-radius: 30px;
-    font-size: 1rem;
+    font-size: 17px;
     cursor: pointer;
     transition: all 0.3s ease;
+
 }
 
-.delete-modal-content button:hover {
+.delete-modal-content .add-button:hover {
     background-color: var(--main-color);
 }
 
 .pics-to-delete {
-    /* position: relative; */
-    top: 0;
-    left: 0;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 5px;
-    padding-bottom: 50px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid gray;
+    grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(87px, 1fr));
+    column-gap: 10px;
+    row-gap: 20px;
+
 }
 
-.pics-to-delete span {
+.pics-to-delete .img-container {
     position: relative;
-    font-size: 17px;
-    font-weight: bold;
-    top: 4px;
-    left: 117px;
-    width: 20%;
-    height: 20%;
-    text-align: center;
+}
+
+.pics-to-delete .delete-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 2px;
     color: white;
-    background-color: black;
     cursor: pointer;
+    padding: 5px;
+    font-size: smaller;
+    text-align: center;
 }
 
 /* ************************************ delete modal page ****************************** */

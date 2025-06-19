@@ -9,15 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
         rel="stylesheet">
     <meta name="description" content="">
-    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
     <title>sophie duplicate</title>
 </head>
 
 <body>
-    <!-- ------------------------------ header -------------------------------------------------  -->
+    <!-- header -->
     <header>
-        <!-- <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1> -->
         <div class="logo">
             <img src="./icons/Logo.png" alt="">
         </div>
@@ -25,24 +24,27 @@
             <ul>
                 <li id="projets">projets</li>
                 <li>contact</li>
-                <li class="login-btn">login</li>
+                <li id="loginMenu" class="login-btn">login</li>
                 <li><img src="./icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
     </header>
-    <!-- ------------------------------ login -------------------------------------------------  -->
+    <!-- login -->
     <div class="login-container">
         <h2>Log in</h2>
         <form id="loginForm">
-            <input type="email" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Mot de passe" />
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Mot de passe">
+            <div class="show-psw">
+                <span>Afficher le mot de passe: </span>
+                <input type="checkbox">
+            </div>
             <button type="submit">Se connecter</button>
-            <a href="#"> Mot de passe oublié</a>
+            <a href="#">Mot de passe oublié </a>
             <p class="login-error"></p>
 
         </form>
     </div>
-
     <footer>
         <ul>
             <li>Mentions Légales</li>

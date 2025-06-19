@@ -1,10 +1,7 @@
 .login-container {
     max-width: 400px;
-    margin: 100px auto;
-    /* background: rgba(255, 255, 255, 0.87); */
+    margin: 0 auto;
     padding: 30px;
-    /* border-radius: 10px; */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .login-container h2 {
@@ -18,28 +15,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
-#loginForm input {
+#loginForm input[type="email"],
+#loginForm input[type="password"],
+#loginForm input[type="text"] {
     width: 93.6%;
     padding: 12px;
     margin: 12px auto;
-    /* border: 1px solid #ccc; */
     border: transparent;
     outline: none;
-    /* border-radius: 6px; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-#loginForm input::placeholder {
+#loginForm input[type="email"]::placeholder,
+#loginForm input[type="password"]::placeholder {
     padding-left: 20px;
     margin-left: 20px;
 }
 
+#loginForm .show-psw {
+    width: 67%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
 .login-container button {
-    /* width: fit-content; */
-    /* align-self: center; */
     padding: 7px 50px;
-    background-color: #245c4f;
+    background-color: #3d9457;
     color: white;
     border: none;
     border-radius: 30px;
@@ -52,8 +58,21 @@
     background-color: #1c4a3d;
 }
 
+#loginForm a {
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 .login-error {
     color: red;
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 15px;
+}
+
+/* active menu for js  */
+.active-login {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b95b2c;
 }

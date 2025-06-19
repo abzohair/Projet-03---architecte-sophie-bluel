@@ -24,15 +24,32 @@
 
 // -------------------------------- login avec le backend ------------------------
 
-
-const form = document.getElementById('loginForm');
+const loginForm = document.getElementById('loginForm');
 const errorMsg = document.querySelector('.login-error');
 
-form.addEventListener('submit', async (e) => {
+// changer le style du menu login cliqué
+document.addEventListener('DOMContentLoaded', () => {
+    const loginMenu = document.getElementById('loginMenu');
+    if (loginMenu) {
+        loginMenu.classList.add('active-login');
+    }
+});
+
+// Afficher le mot de passe 
+document.querySelector('.show-psw input').addEventListener('change', (e) => {
+    const password = loginForm.password;
+
+    e.target.checked ? password.type = 'text' :
+        password.type = 'password';
+
+
+})
+
+loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const email = form.email.value.trim();
-    const password = form.password.value.trim();
+    const email = loginForm.email.value.trim();
+    const password = loginForm.password.value.trim();
 
     try {
         const response = await fetch('http://localhost:5678/api/users/login', {
@@ -48,15 +65,13 @@ form.addEventListener('submit', async (e) => {
             localStorage.setItem('token', data.token)
             window.location.href = '/index.html'
         } else {
-            console.log('ma kayen walo');
-            errorMsg.textContent = 'Erreur dans l’identifiant ou le mot de passe'
+            errorMsg.textContent = "Erreur dans l'identifiant ou le mot de passe"
 
         }
 
     } catch (error) {
-        console.log(error);
+        console.error(error);
         errorMsg.textContent = 'Erreur dans le serveur'
     }
-
 
 });
