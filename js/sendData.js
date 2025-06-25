@@ -42,7 +42,7 @@ function checkFormCompletion() {
     const isTextValid = text.length > 0;
     const isCategoryValid = category !== '' && category !== '-- Choisir --';
 
-    // Vérifie que tous les champs sont remplis correctement
+    // Vérifies que tous les champs sont remplis correctement
     if (isFileValid && isTextValid && isCategoryValid) {
         submitBtn.style.background = '#3d9457';
         warningMsg.textContent = '';
@@ -101,7 +101,7 @@ form.addEventListener('submit', async (e) => {
     const category = formDataAddModal.get('category');
     console.log(category);
 
-    // Affichage du message d'erreur si un ou tout les champs sont vide
+    // Affichage du message d'erreur si un ou tous les champs sont vide
     if (!image || !image.name || !title || !category) {
 
         warningMsg.textContent = 'Les champs sont obligatoires';
@@ -115,7 +115,7 @@ form.addEventListener('submit', async (e) => {
 
     console.log(typeof category);
 
-    // Récuperer le token du localStorage
+    // Récupérer le token du localStorage
     const token = localStorage.getItem('token');
     console.log(token);
 
@@ -125,13 +125,15 @@ form.addEventListener('submit', async (e) => {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`
-                // Ne pas ajouter 'Content-Type', sinon FormData échoue
+                // Ne pas ajouter 'Content-Type', sinon FormData échoue, car il le fait par défaut
             },
             body: formDataAddModal
         });
 
         if (!response.ok) {
             throw new Error("Échec de l'envoi. Vérifiez votre token ou vos données.");
+        } else {
+            alert('Ajout de projet avec succès ! 👍')
         }
 
         //L'envoie des données du formulaire c'est en même temps une création d'un nouveau projet

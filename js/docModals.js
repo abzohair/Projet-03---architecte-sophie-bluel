@@ -32,7 +32,7 @@ closeModalList.forEach(close => {
             addModal.classList.remove('show');
             warningMsg.textContent = '';
             displayPreviewContainer();
-            formReset()
+            formReset();
             submitBtn.style.background = '#b6b6b6';
         }
     }
@@ -63,14 +63,14 @@ document.querySelector('.add-modal-return').addEventListener('click', () => {
     deleteModal.classList.add('show');
     warningMsg.textContent = '';
     displayPreviewContainer();
-    formReset()
+    formReset();
     submitBtn.style.background = '#b6b6b6';
 })
 
 // // ------------------------------ delete modal ---------------------------
 export function showDeleteModal(projects) {
     const picsToDelete = document.querySelector('.pics-to-delete');
-    const openModal = [document.getElementById('openModal'), document.getElementById('openModalTwo')]
+    const openModal = [document.getElementById('openModal'), document.getElementById('openModalTwo')];
 
     openModal?.forEach(open => {
         open.addEventListener('click', () => {

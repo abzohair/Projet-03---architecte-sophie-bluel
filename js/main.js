@@ -4,7 +4,7 @@ import { displayCatOptions } from './sendData.js';
 document.addEventListener('DOMContentLoaded', () => {
     fetchWorks();
     checkAdminMode();
-    document.querySelector('.login-btn').addEventListener('click', (e) => {
+    document.querySelector('.login-btn').addEventListener('click', () => {
         window.location.href = '/login.html';
 
     });
@@ -59,8 +59,8 @@ async function fetchCat() {
     try {
         const respons = await fetch('http://localhost:5678/api/categories');
         const categories = await respons.json();
-        displayCat(categories);
-        displayCatOptions(categories)
+        displayCat(categories); //Boutons filtres callback
+        displayCatOptions(categories); //tag <select> <option> </select> callback
 
     } catch (error) {
         console.log(error);
@@ -123,15 +123,7 @@ async function setFiltredcategory(projects) {
 
 }
 
-// clicker sur login pour aller à la page login
-// document.addEventListener('DOMContentLoaded', () => {
-//     document.querySelector('.login-btn').addEventListener('click', (e) => {
-//         window.location.href = '/login.html';
-
-//     })
-// })
-
-// Gèrer l'affichage admin si connecté
+// Gérer l'affichage admin si connecté
 function checkAdminMode() {
 
     const token = localStorage.getItem('token');
