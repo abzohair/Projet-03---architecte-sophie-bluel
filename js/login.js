@@ -1,29 +1,3 @@
-// -------------------------------- login avec le localStorage ------------------------
-// const form = document.getElementById('loginForm');
-// const errorMsg = document.querySelector('.login-error');
-
-
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-//     const email = form.email.value.trim();
-//     const password = form.password.value.trim();
-
-//     console.log('e-mail:', email);
-//     console.log('password:', password);
-
-
-//     // if (email === "zohair@mail.com" && password === "moimeme") {
-//     //     localStorage.setItem("token", "fake-token");
-//     //     alert("Connexion réussie !");
-//     //     window.location.href = "/index.html";
-//     // } else {
-//     //     errorMsg.textContent = "Identifiants invalides";
-//     // }
-// });
-
-// -------------------------------- login avec le backend ------------------------
-
 const loginForm = document.getElementById('loginForm');
 const errorMsg = document.querySelector('.login-error');
 
