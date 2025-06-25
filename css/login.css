@@ -1,3 +1,10 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
+
 .login-container {
     max-width: 400px;
     margin: 0 auto;

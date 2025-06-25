@@ -70,39 +70,41 @@ document.querySelector('.add-modal-return').addEventListener('click', () => {
 // // ------------------------------ delete modal ---------------------------
 export function showDeleteModal(projects) {
     const picsToDelete = document.querySelector('.pics-to-delete');
-    const openModal = document.getElementById('openModal');
+    const openModal = [document.getElementById('openModal'), document.getElementById('openModalTwo')]
 
-    openModal.addEventListener('click', () => {
-        deleteModal.classList.add('show');
-        // init avant d'afficher' 
-        picsToDelete.innerText = '';
+    openModal?.forEach(open => {
+        open.addEventListener('click', () => {
+            deleteModal.classList.add('show');
+            // init avant d'afficher' 
+            picsToDelete.innerText = '';
 
-        projects?.forEach(pic => {
-            const container = document.createElement('div');
-            container.classList.add('img-container');
+            projects?.forEach(pic => {
+                const container = document.createElement('div');
+                container.classList.add('img-container');
 
-            const img = document.createElement('img');
-            img.src = pic.imageUrl;
-            img.alt = pic.title;
+                const img = document.createElement('img');
+                img.src = pic.imageUrl;
+                img.alt = pic.title;
 
-            const btn = document.createElement('button');
-            // btn.innerText = 'X'
-            btn.innerText = '🗑';
-            btn.className = 'delete-btn';
-            btn.onclick = () => {
-                if (confirm('La suppression est définitive. Etes-vous sur !')) {
-                    deletePhoto(pic.id, container)
-                }
+                const btn = document.createElement('button');
+                // btn.innerText = 'X'
+                btn.innerText = '🗑';
+                btn.className = 'delete-btn';
+                btn.onclick = () => {
+                    if (confirm('La suppression est définitive. Etes-vous sur !')) {
+                        deletePhoto(pic.id, container)
+                    }
 
-            };
+                };
 
-            container.appendChild(img);
-            container.appendChild(btn);
-            picsToDelete.appendChild(container);
+                container.appendChild(img);
+                container.appendChild(btn);
+                picsToDelete.appendChild(container);
 
+
+            })
 
         })
-
     })
 
 }

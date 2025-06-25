@@ -4,6 +4,10 @@ import { displayCatOptions } from './sendData.js';
 document.addEventListener('DOMContentLoaded', () => {
     fetchWorks();
     checkAdminMode();
+    document.querySelector('.login-btn').addEventListener('click', (e) => {
+        window.location.href = '/login.html';
+
+    });
 })
 
 // appel des données via l'API 
@@ -47,6 +51,7 @@ function displayWorks(projects) {
         gallery.appendChild(figure);
 
     })
+
 
 }
 
@@ -119,12 +124,12 @@ async function setFiltredcategory(projects) {
 }
 
 // clicker sur login pour aller à la page login
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.login-btn').addEventListener('click', (e) => {
-        window.location.href = '/login.html';
+// document.addEventListener('DOMContentLoaded', () => {
+//     document.querySelector('.login-btn').addEventListener('click', (e) => {
+//         window.location.href = '/login.html';
 
-    })
-})
+//     })
+// })
 
 // Gèrer l'affichage admin si connecté
 function checkAdminMode() {
@@ -134,15 +139,19 @@ function checkAdminMode() {
         document.querySelector('.logout-btn').style.display = 'block';
         document.querySelector('.login-btn').style.display = 'none';
         document.querySelector('.filters').style.display = 'none';
+        document.querySelector('.edition-mode').style.display = 'block';
+        document.querySelector('.logo-menu').style.marginTop = '30px';
+        document.querySelector('#portfolio h2').style.marginRight = '27px';
         document.querySelector('.edit').style.cssText = `
         display: block;
-        margin-bottom: 32px;
         border: none;
         cursor: pointer; 
         `
     } else {
         document.querySelector('.login-btn').style.display = 'block';
         document.querySelector('.edit').style.display = 'none';
+        document.querySelector('#portfolio span').style.display = 'none';
+        document.querySelector('.projects-edit').style.marginBottom = '45px';
 
     }
 }
